@@ -1,0 +1,11 @@
+'WriteLog vba code for writing log in a file
+'the file name
+Sub WriteLog(strPath As String, Filename As String, log As String)
+    Dim FSO As Object
+    Set FSO = CreateObject("Scripting.FileSystemObject")
+    Dim Fileout As Object
+    logstring = strPath & Filename
+    Set Fileout = FSO.CreateTextFile(logstring, True, True)
+    Fileout.Write log
+    Fileout.Close
+End Sub
